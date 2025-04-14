@@ -18,7 +18,7 @@ export interface DialogProps extends MuiDialogProps {
 export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
   ({ children, open, onOpenChange, ...props }, ref) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-object-type
-    const handleClose = (_: {}, reason: "backdropClick" | "escapeKeyDown") => {
+    const handleClose = (_: {}) => {
       if (onOpenChange) {
         onOpenChange(false)
       }

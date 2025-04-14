@@ -185,7 +185,7 @@ export function DropdownMenuItem({
   ...props
 }: DropdownMenuItemProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {};
+  const handleClick = (_: React.MouseEvent<HTMLElement>) => {};
 
   return (
     <StyledMenuItem

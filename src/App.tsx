@@ -134,7 +134,7 @@ export default function UsersPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [menuAnchorEl, setMenuAnchorEl] = useState<null | HTMLElement>(null)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [selectedUserId, setSelectedUserId] = useState<string | null>(null)
+  const [_, setSelectedUserId] = useState<string | null>(null)
   const [isShow, setIsShow] =  useState<boolean>(false);
 
   // Filtrar usuários com base no termo de busca

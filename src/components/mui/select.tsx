@@ -20,8 +20,7 @@ export interface SelectProps extends Omit<MuiSelectProps, "value" | "onChange"> 
   error?: boolean
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const StyledFormControl = styled(FormControl)(({ theme }) => ({
+const StyledFormControl = styled(FormControl)(() => ({
   minWidth: 120,
 }))
 

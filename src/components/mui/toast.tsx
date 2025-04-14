@@ -14,7 +14,7 @@ export interface ToastProps extends Omit<SnackbarProps, "open"> {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const StyledSnackbar = styled(Snackbar)(({ theme }) => ({
+const StyledSnackbar = styled(Snackbar)(() => ({
   "& .MuiAlert-root": {
     width: "100%",
   },
@@ -81,33 +81,11 @@ const toastState = {
   open: false,
   options: {} as UseToastOptions,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  setOpen: (open: boolean) => {},
+  setOpen: (_: boolean) => {},
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  setOptions: (options: UseToastOptions) => {},
+  setOptions: (_: UseToastOptions) => {},
 }
 
-export const useToast = (): UseToastReturn => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [open, setOpen] = React.useState(false)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [options, setOptions] = React.useState<UseToastOptions>({})
-
-  // Atualiza o estado global
-  React.useEffect(() => {
-    toastState.setOpen = setOpen
-    toastState.setOptions = setOptions
-  }, [])
-
-  return {
-    toast: (options: UseToastOptions) => {
-      setOptions(options)
-      setOpen(true)
-    },
-    dismiss: () => {
-      setOpen(false)
-    },
-  }
-}
 
 // Componente para renderizar os toasts
 export const ToastViewport: React.FC = () => {
