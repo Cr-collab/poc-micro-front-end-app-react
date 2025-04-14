@@ -2,6 +2,7 @@ import React from "react"
 import { TextField, type TextFieldProps } from "@mui/material"
 import { styled } from "@mui/material/styles"
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface InputProps extends Omit<TextFieldProps, "variant"> {
   // Adicionar propriedades específicas do shadcn/ui se necessário
 }

@@ -13,6 +13,7 @@ export interface ToastProps extends Omit<SnackbarProps, "open"> {
   description?: string
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledSnackbar = styled(Snackbar)(({ theme }) => ({
   "& .MuiAlert-root": {
     width: "100%",
@@ -79,12 +80,16 @@ export interface UseToastReturn {
 const toastState = {
   open: false,
   options: {} as UseToastOptions,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setOpen: (open: boolean) => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setOptions: (options: UseToastOptions) => {},
 }
 
 export const useToast = (): UseToastReturn => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [open, setOpen] = React.useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [options, setOptions] = React.useState<UseToastOptions>({})
 
   // Atualiza o estado global

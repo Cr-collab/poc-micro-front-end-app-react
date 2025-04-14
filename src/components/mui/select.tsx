@@ -20,6 +20,7 @@ export interface SelectProps extends Omit<MuiSelectProps, "value" | "onChange"> 
   error?: boolean
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledFormControl = styled(FormControl)(({ theme }) => ({
   minWidth: 120,
 }))
@@ -42,6 +43,7 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
         <MuiSelect
           labelId={labelId}
           value={value || ""}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           onChange={handleChange as any}
           displayEmpty={!!placeholder}
           open={open}

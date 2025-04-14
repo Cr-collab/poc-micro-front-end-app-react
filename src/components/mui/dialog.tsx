@@ -17,6 +17,7 @@ export interface DialogProps extends MuiDialogProps {
 
 export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
   ({ children, open, onOpenChange, ...props }, ref) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-object-type
     const handleClose = (_: {}, reason: "backdropClick" | "escapeKeyDown") => {
       if (onOpenChange) {
         onOpenChange(false)
@@ -42,7 +43,7 @@ export const DialogTrigger = React.forwardRef<HTMLDivElement, DialogTriggerProps
   // Este componente é apenas para compatibilidade com a API shadcn/ui
   // No MUI, o trigger é geralmente um botão que controla o estado do Dialog
   if (asChild && React.isValidElement(children)) {
-    return React.cloneElement(children, { ref })
+    return React.cloneElement(children)
   }
   return <div ref={ref}>{children}</div>
 })

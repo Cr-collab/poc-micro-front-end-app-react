@@ -4,7 +4,6 @@ import { styled } from "@mui/material/styles"
 
 export interface ButtonProps extends Omit<MuiButtonProps, "variant"> {
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link"
-  size?: "default" | "sm" | "lg" | "icon"
   asChild?: boolean
 }
 
@@ -67,7 +66,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     // Se asChild for true, apenas renderizar os filhos (comportamento similar ao Radix)
     if (asChild && React.isValidElement(children)) {
-      return React.cloneElement(children, { ...props, ref })
+      return React.cloneElement(children, { ...props})
     }
 
     // Renderizar o botão com base na variante

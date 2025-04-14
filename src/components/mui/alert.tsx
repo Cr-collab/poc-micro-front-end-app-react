@@ -1,14 +1,14 @@
-import React from "react"
+import React from "react";
 import {
   Alert as MuiAlert,
   type AlertProps as MuiAlertProps,
   AlertTitle as MuiAlertTitle,
   Typography,
-} from "@mui/material"
-import { styled } from "@mui/material/styles"
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 export interface AlertProps extends Omit<MuiAlertProps, "variant"> {
-  variant?: "default" | "destructive"
+  variant?: "default" | "destructive";
 }
 
 const StyledAlert = styled(MuiAlert, {
@@ -22,46 +22,53 @@ const StyledAlert = styled(MuiAlert, {
       color: theme.palette.error.main,
     },
   }),
-}))
+}));
 
 export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   ({ variant = "default", children, ...props }, ref) => {
-    const muiVariant = variant === "destructive" ? "filled" : "outlined"
-    const muiSeverity = variant === "destructive" ? "error" : props.severity || "info"
+    const muiSeverity =
+      variant === "destructive" ? "error" : props.severity || "info";
 
     return (
-      <StyledAlert ref={ref} variant={muiVariant} severity={muiSeverity} {...props}>
+      <StyledAlert
+        ref={ref}
+        severity={muiSeverity}
+        {...props}
+      >
         {children}
       </StyledAlert>
-    )
-  },
-)
-Alert.displayName = "Alert"
+    );
+  }
+);
+Alert.displayName = "Alert";
 
 export interface AlertTitleProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export const AlertTitle = React.forwardRef<HTMLHeadingElement, AlertTitleProps>(({ children, ...props }, ref) => {
-  return (
-    <MuiAlertTitle ref={ref} {...props}>
-      {children}
-    </MuiAlertTitle>
-  )
-})
-AlertTitle.displayName = "AlertTitle"
-
-export interface AlertDescriptionProps {
-  children: React.ReactNode
-}
-
-export const AlertDescription = React.forwardRef<HTMLParagraphElement, AlertDescriptionProps>(
+export const AlertTitle = React.forwardRef<HTMLHeadingElement, AlertTitleProps>(
   ({ children, ...props }, ref) => {
     return (
-      <Typography variant="body2" component="div" ref={ref} {...props}>
+      <MuiAlertTitle ref={ref} {...props}>
         {children}
-      </Typography>
-    )
-  },
-)
-AlertDescription.displayName = "AlertDescription"
+      </MuiAlertTitle>
+    );
+  }
+);
+AlertTitle.displayName = "AlertTitle";
+
+export interface AlertDescriptionProps {
+  children: React.ReactNode;
+}
+
+export const AlertDescription = React.forwardRef<
+  HTMLParagraphElement,
+  AlertDescriptionProps
+>(({ children, ...props }, ref) => {
+  return (
+    <Typography variant="body2" component="div" ref={ref} {...props}>
+      {children}
+    </Typography>
+  );
+});
+AlertDescription.displayName = "AlertDescription";

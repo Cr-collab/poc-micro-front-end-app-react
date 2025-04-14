@@ -12,6 +12,7 @@ import {
 } from "@mui/material"
 
 // Card
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface CardProps extends MuiCardProps {}
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(({ children, ...props }, ref) => {

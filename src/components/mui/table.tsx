@@ -14,6 +14,7 @@ import {
 } from "@mui/material"
 
 // Table
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface TableProps extends MuiTableProps {}
 
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(({ children, ...props }, ref) => {
@@ -28,6 +29,7 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(({ children,
 Table.displayName = "Table"
 
 // TableHeader
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface TableHeaderProps extends MuiTableHeadProps {}
 
 export const TableHeader = React.forwardRef<HTMLTableSectionElement, TableHeaderProps>(
@@ -42,6 +44,7 @@ export const TableHeader = React.forwardRef<HTMLTableSectionElement, TableHeader
 TableHeader.displayName = "TableHeader"
 
 // TableBody
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface TableBodyProps extends MuiTableBodyProps {}
 
 export const TableBody = React.forwardRef<HTMLTableSectionElement, TableBodyProps>(({ children, ...props }, ref) => {
@@ -54,6 +57,7 @@ export const TableBody = React.forwardRef<HTMLTableSectionElement, TableBodyProp
 TableBody.displayName = "TableBody"
 
 // TableRow
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface TableRowProps extends MuiTableRowProps {}
 
 export const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(({ children, ...props }, ref) => {
@@ -66,6 +70,7 @@ export const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(({ 
 TableRow.displayName = "TableRow"
 
 // TableHead
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface TableHeadProps extends MuiTableCellProps {}
 
 export const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(({ children, ...props }, ref) => {
@@ -78,6 +83,7 @@ export const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
 TableHead.displayName = "TableHead"
 
 // TableCell
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface TableCellProps extends MuiTableCellProps {}
 
 export const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(({ children, ...props }, ref) => {

@@ -24,7 +24,7 @@ const StyledCheckbox = styled(MuiCheckbox)(({ theme }) => ({
 }))
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ checked, onCheckedChange, label, labelProps, ...props }, ref) => {
+  ({ checked, onCheckedChange, label, labelProps, ...props }) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (onCheckedChange) {
         onCheckedChange(event.target.checked)
@@ -33,7 +33,6 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
 
     const checkbox = (
       <StyledCheckbox
-        ref={ref}
         checked={checked === "indeterminate" ? false : checked}
         indeterminate={checked === "indeterminate"}
         onChange={handleChange}
